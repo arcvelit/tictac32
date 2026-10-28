@@ -11,7 +11,7 @@ int main()
         int square;
 
         printf("Player %c's turn: ", REPR[get_turn(board)]);
-        if (scanf("%d", &square) != 1 || square < 0 || square > 8) {
+        if (scanf("%d", ((char*)&board)) != 1 || square < 0 || square > 8) {
             while ((square = getchar()) != '\n' && square != EOF);
         TRY_AGAIN: 
             printf("Try again...\n");

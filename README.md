@@ -1,4 +1,4 @@
-# tictac
+# tictac32
 Tic-tac-toe game packed in an int
 
 ```c
@@ -11,3 +11,6 @@ int board = set_turn(EMPTY_BOARD, PLAYER_X);
 * The two most significant bits hold the turn `{ X: 01, O: 11 }`
 * The 18 least significant bits hold the squares
   * Each square is represented by a two-bit pair corresponding to the player
+
+## Note
+You could pack it in a minimum of three bytes, though it would run slower...
