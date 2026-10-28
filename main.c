@@ -12,18 +12,17 @@ int main()
 
         printf("Player %c's turn: ", REPR[get_turn(board)]);
         if (scanf("%d", &square) != 1 || square < 0 || square > 8) {
-            while ((square = getchar()) != '\n' && square != EOF) {}
-            TRY_AGAIN:
+            while ((square = getchar()) != '\n' && square != EOF);
+        TRY_AGAIN: 
             printf("Try again...\n");
             continue;
         }
 
-        if (get_square(board, square) == NONE) {
-            board = set_square(board, get_turn(board), square);
-        } else {
+        if (get_square(board, square) != NONE) {
             goto TRY_AGAIN;
         }
-
+         
+        board = set_square(board, get_turn(board), square);
         print_board(board);
 
         if (outcome(board, get_turn(board), square)) {

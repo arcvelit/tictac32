@@ -2,7 +2,6 @@
 #define TICTACTOE_H
 
 #include <stdio.h>
-#include <stdint.h>
 
 typedef enum {
     TOP_LEFT, TOP_MID, TOP_RIGHT,
